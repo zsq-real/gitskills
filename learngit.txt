@@ -1,0 +1,50 @@
+git
+
+pwd 当前目录文件
+cd进入
+
+
+git init 初始化库
+
+添加
+git add  <file>添加文件------------------添加到暂存区；
+git commit -m ”msg“ 提交事务，提交到仓库-------------把暂存区的所有内容提交到当前分支。多次添加只需要一次提交
+
+查看
+git status<file>查看工作区状态，，移交新文件步骤同添加文件 
+git diff <file> 查看不同
+
+
+时光机（回溯）
+git log 最近到最远的提交日志  commit是版本号
+git reset --hard HEAD^ 回到上一次  HEAD^^回到上上一次
+git reset --hard commit id 回到指定的版本
+cat <file> 查看文本内容
+git reflog 查看命令历史，以便确定要回到未来的哪个版本。
+
+撤销修改
+本地文件修改了， 还没有添加到暂存区
+	git checkout -- <file>
+本地文件修改了，且添加到了暂存区
+	1、撤销暂存区修改 git reset HEAD <file>
+	2、撤销本地修改 git checkout -- <file>
+
+删除文件
+git rm <file> 删除文件并提交到暂存区
+git commit-m"msg" 提交到版本库
+
+远程库（github）
+连接远程库
+	git remote add origin git@github.com:自己的用户名/github上的仓库名.git
+		添加完毕后远程库的名字就是origin，git的默认叫法
+移除
+	git remote rm origin
+
+git push 把当前分支master推送到远程库，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+之后只要本地做了提交，就可以通过命令 
+	git push origin master 将本地的master分支的改动推送到GitHub、
+
+现有远程库，对于远程库的克隆，
+	git clone git@github.com:用户名/仓库名.git 
+		克隆成功，本地拥有克隆的版本库
