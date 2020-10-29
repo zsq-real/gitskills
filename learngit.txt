@@ -48,3 +48,30 @@ git push 把当前分支master推送到远程库，加上了-u参数，Git不但
 现有远程库，对于远程库的克隆，
 	git clone git@github.com:用户名/仓库名.git 
 		克隆成功，本地拥有克隆的版本库
+
+分支管理
+1、创建与合并
+	git checkout -b <分支名>
+		完成操作为git branch <分支名>  ===>>  git checkout <分支名> 
+	git switch -c <分支名>
+2、查询当前分支
+	git branch
+3、切换分支
+	git switch <分支名>
+4、合并分支
+	git merge <分支名>
+		将当前和目标合并
+			若有两个分支不同进度，对同一个目标进行修改，会发生合并冲突，需要手动解决然后再合并
+5、git stash  储存分支
+	git stash apply 恢复存储的分支。但是不删除存储分支	
+	git stash pop 恢复并删除存储分支
+6、删除
+	git branch -d <name>
+	git branch -D <name>强制删除，删除的是没有合并过的分支
+
+
+
+
+
+
+
