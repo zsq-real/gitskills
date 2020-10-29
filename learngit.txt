@@ -68,6 +68,21 @@ git push 把当前分支master推送到远程库，加上了-u参数，Git不但
 6、删除
 	git branch -d <name>
 	git branch -D <name>强制删除，删除的是没有合并过的分支
+7、git pull 拉取
+	如果提示 no tracking information 说明本地分支和远程分支的链接没有建立，用
+		git branch --set-upstream-to <branch-name> origin/<branch-name>建立连接
+8、git rebase 把本地为push的分叉提交历史整理成直线
+	可以使我们查看更加容易，
+
+
+标签
+git tag <便签名> 打标签，效果和commit-id类似，但更直观，
+	创建的是最新commit的版本，
+		git tag -a <tagname> -m "blablabla..." 给指定的commit加标签
+git tag -d <标签名> 删除，创建的标签都在本地，不会自动推给远程
+	git push origin <target-name>给远程推送
+		git push origin --tags 一次推送所有标签
+		
 
 
 
